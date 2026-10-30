@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Compare Shopify orders with GA4 purchases locally in your browser."><title>Shopify and GA4 reconciliation</title><link rel="icon" href="data:,"><link rel="stylesheet" href="/style.css"></head>
+<body><main>
+<h1>Shopify orders vs GA4 purchases</h1>
+<p>Compare two CSV exports locally. Files stay in this browser. <a href="https://taskfordaniel.com/tools/shopify-ga4-reconciliation/">Hosted version and export method</a>.</p>
+<button type="button" id="rc-sample">Load sample data</button>
+<form id="rc-form" autocomplete="off">
+<p>Use the same completed period. Each file can contain up to 10 MB and 50,000 rows.</p>
+<div class="grid">
+<section id="rc-shopify-drop"><h2>Shopify orders CSV</h2><label for="rc-shopify">Choose Shopify CSV</label><input id="rc-shopify" type="file" accept=".csv,text/csv"><p id="rc-shopify-error" role="alert" hidden></p><div id="rc-shopify-mapping"></div></section>
+<section id="rc-ga4-drop"><h2>GA4 purchases CSV</h2><label for="rc-ga4">Choose GA4 CSV</label><input id="rc-ga4" type="file" accept=".csv,text/csv"><p id="rc-ga4-error" role="alert" hidden></p><div id="rc-ga4-mapping"></div></section>
+</div>
+<fieldset><legend>Make the values comparable</legend><div class="grid settings">
+<label>GA4 property time zone<input name="timeZone" value="UTC" required></label>
+<label>GA4 reporting currency<input name="reportingCurrency" value="USD" maxlength="3" pattern="[A-Za-z]{3}"></label>
+<label>GA4 currency basis<select name="currencyMode"><option value="report">Report / Explore: property currency</option><option value="local">BigQuery: per-row local currency</option></select></label>
+<label>Revenue basis<select name="refundBasis"><option value="gross">Original purchase (before refunds)</option><option value="net">Net after refunds (approximation)</option></select></label>
+<label>Absolute tolerance<input name="absoluteTolerance" type="number" value="0.50" min="0" step="0.01" required></label>
+<label>Percentage tolerance (%)<input name="percentTolerance" type="number" value="1" min="0" step="0.01" required></label>
+</div><p>UTC and USD are starting values. Enter your property's IANA time zone and reporting currency. Shopify Subtotal is selected when available; choose Total if purchase value includes tax and shipping. A difference must exceed the larger tolerance. Net refunds are approximate.</p></fieldset>
+<div class="actions"><button type="submit">Compare exports</button><button type="button" id="rc-reset">Clear files and results</button></div>
+</form>
+<p id="rc-status" role="status" aria-live="polite">Choose both exports, or load the synthetic sample.</p>
+<div class="actions"><button type="button" id="rc-shopify-sample">Download Shopify sample</button><button type="button" id="rc-ga4-sample">Download GA4 sample</button></div>
+<p>The sample adds Test and Subscription renewal columns that standard exports may omit.</p>
+<section id="rc-results" hidden><h2>Reconciliation ledger</h2><button type="button" id="rc-download" disabled>Download result CSV</button><p>Export differences do not prove their cause. Repeated IDs do not prove duplicate tagging. Money is never converted or summed across currencies.</p><div id="rc-output"></div></section>
+<noscript>This tool needs JavaScript.</noscript>
+</main><script type="module" src="/source/scripts/reconciliation/controller.ts"></script></body></html>

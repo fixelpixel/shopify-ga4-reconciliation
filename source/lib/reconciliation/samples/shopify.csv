@@ -1,0 +1,17 @@
+Name,Id,Created at,Financial Status,Paid at,Canceled at,Subtotal,Total,Currency,Refunded Amount,Payment Method,Source,Lineitem quantity,Lineitem name,Test,Subscription renewal
+#1001,900000001,2026-10-01 23:30:00 -0400,paid,2026-10-01 23:30:00 -0400,,100,110,USD,0,Shopify Payments,web,1,Synthetic item A,false,false
+#1001,,,,,,,,,,,,1,"Synthetic item B, extra",,
+#1002,900000002,2026-10-02 10:00:00 +0000,paid,2026-10-02 10:00:00 +0000,,100,110,USD,0,PayPal,web,1,Synthetic item,false,false
+#1003,900000003,2026-10-02 10:00:00 +0000,paid,2026-10-02 10:00:00 +0000,,100,110,USD,0,Shopify Payments,web,1,Synthetic item,false,false
+#1004,900000004,2026-10-02 10:00:00 +0000,voided,,2026-10-02 10:01:00 +0000,100,110,USD,0,Shopify Payments,web,1,Synthetic item,false,false
+#1005,900000005,2026-10-02 10:00:00 +0000,paid,2026-10-02 10:00:00 +0000,,100,110,USD,0,Bogus,web,1,Synthetic item,true,false
+#1006,900000006,2026-10-02 10:00:00 +0000,paid,2026-10-02 10:00:00 +0000,,100,110,USD,0,Cash,pos,1,Synthetic item,false,false
+#1007,900000007,2026-10-02 10:00:00 +0000,paid,2026-10-02 10:00:00 +0000,,100,110,USD,0,Manual,draft_order,1,Synthetic item,false,false
+#1008,900000008,2026-10-02 10:00:00 +0000,refunded,2026-10-02 10:00:00 +0000,,100,110,USD,110,Shopify Payments,web,1,Synthetic item,false,false
+#1009,900000009,2026-10-02 10:00:00 +0000,paid,2026-10-02 10:00:00 +0000,,100,110,USD,0,Shopify Payments,subscription,1,Synthetic item,false,true
+#1010,900000010,2026-10-02 10:00:00 +0000,paid,2026-10-02 10:00:00 +0000,,100,110,USD,0,Shopify Payments,web,1,Synthetic item,false,false
+#1011,900000011,2026-10-02 10:00:00 +0000,partially_refunded,2026-10-02 10:00:00 +0000,,100,110,USD,20,PayPal,web,1,Synthetic item,false,false
+#1012,900000012,2026-10-02 10:00:00 +0000,paid,2026-10-02 10:00:00 +0000,2026-10-03 10:00:00 +0000,100,110,USD,0,Manual,web,1,Synthetic item,false,false
+#1013,900000013,2026-10-02 10:00:00 +0000,paid,2026-10-02 10:00:00 +0000,,100,110,EUR,0,Shopify Payments,web,1,Synthetic item,false,false
+#1014,900000014,2026-10-02 10:00:00 +0000,paid,2026-10-02 10:00:00 +0000,,100,110,USD,0,Shopify Payments,web,1,Synthetic item,false,false
+#01014,900000015,2026-10-02 10:00:00 +0000,paid,2026-10-02 10:00:00 +0000,,100,110,USD,0,Shopify Payments,web,1,Synthetic item,false,false

@@ -1,0 +1,16 @@
+# Synthetic GA4 free-form example
+# No real store or customer data
+# Date range: 20261001 to 20261003
+
+Transaction ID,Date,Purchase revenue,Ecommerce purchases,Currency
+1001,20261002,100,1,USD
+900000002,20261002,80,1,USD
+1010,20261002,100,1,USD
+1010,20261002,100,1,USD
+1011,20261002,100,1,USD
+1012,20261003,100,1,USD
+1013,20261002,100,1,USD
+1014,20261002,100,1,USD
+unrelated-synthetic-order,20261002,75,1,USD
+(not set),20261002,25,1,USD
+counted-synthetic-duplicate,20261002,40,2,USD

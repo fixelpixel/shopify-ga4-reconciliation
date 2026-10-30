@@ -1,0 +1,19 @@
+{
+  "name": "shopify-ga4-reconciliation",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=22.23"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test": "node --test test/*.test.mjs"
+  },
+  "devDependencies": {
+    "vite": "6.4.1"
+  }
+}
